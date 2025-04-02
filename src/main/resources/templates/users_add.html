@@ -7,7 +7,10 @@
 <body>
 <h1>My demo App</h1>
 
+<h2 th:text="${user.id == 0 ? 'New User' : 'Edit User'}"></h2>
+
 <form method="post" th:action="@{/users/add}" th:object="${user}">
+    <input type="hidden" th:field="*{id}">
     Name: <input type="text" th:field="*{name}">
     <input type="submit" value="Save">
 </form>
